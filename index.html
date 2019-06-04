@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Epic Snake Game - From when i was young</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+html,body{
+    overflow: hidden;
+    background:#333;
+    width:100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    color:rgb(215,159, 42);
+}
+body{
+    color:rgb(215,159, 42);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+body.running {
+    cursor:none;
+}
+body.running #startbtn{
+    display: none;
+}
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#startbtn{
+    cursor: pointer;
+    background:#333;
+    height: 100vh;;
+    font-size: 30px;
+    text-align: center;
+    padding-top:40vh;
+}
+#prevgame{
+    text-align: center;
+}
+#total{
+    background:transparent;
+    position: absolute;
+    right:0;
+    font-size: 16px;
+    float: right;
+    text-align: right;
+    padding: 5px;
+}
+
+.clearfix{
+    clear: both;
+}
+</style>
+      
+
+        <!-- <meta property="og:title" content="Vandel.io firework show"/>
+        <meta property="og:image" content="http://fireworks.vandel.io/assets/rocket.jpg"/>
+        <meta property="og:site_name" content="Stefan Vandelio"/>
+        <meta property="og:description" content="Newyears present for everyone, free fireworks with sound "/>
+   -->
+ </head> 
+    <body>
+        <div id="total"></div>
+        
+        <div id="prevgame"></div>
+        <div id="startbtn">
+            Start snake
+        </div>
+
+       
+        <script language="javascript" type="text/javascript" src="../libraries/p5.js"></script>
+        <script language="javascript" src="../libraries/p5.dom.js"></script>
+        <script language="javascript" src="../libraries/p5.sound.js"></script>
+        <script language="javascript" type="text/javascript" src="snake.js"></script>
+        <script language="javascript" type="text/javascript" src="setup.js"></script>
+        <!-- <script language="javascript" type="text/javascript" src="build.js"></script>
+        <script language="javascript" type="text/javascript" src="particle.js"></script>
+        <script language="javascript" type="text/javascript" src="firework.js"></script>
+        -->
+
+        <script> 
+        if(!document.querySelector('body').classList.contains('running') && document.getElementById('total').innerHTML.length > 0){
+            document.getElementById('prevgame').classList.add('show');
+        }
+        document.getElementById('startbtn').addEventListener('click',function(){
+            document.querySelector('body').classList.add('running');
+            document.getElementById('prevgame').innerHTML = '';
+        });
+        
+        </script>
+
+    </body>
+</html>
